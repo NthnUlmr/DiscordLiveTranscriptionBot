@@ -1,0 +1,67 @@
+\doxysection{main.\+py File Reference}
+\hypertarget{main_8py}{}\label{main_8py}\index{main.py@{main.py}}
+
+
+This project is a simple Discord bot which transcribes your Discord conversations in real time.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmain_1_1_stream_buffer}{main.\+Stream\+Buffer}}
+\begin{DoxyCompactList}\small\item\em The. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmain_1_1_stream_sink}{main.\+Stream\+Sink}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemain}{main}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_acfe7ac1a897e5f9a147d5a28aa130deb}{main.\+join}} (ctx)
+\item 
+\mbox{\hyperlink{namespacemain_ab02ae4c747b9bae14036f22bfe1982c0}{main.\+leave}} (ctx)
+\item 
+\mbox{\hyperlink{namespacemain_a89a8febbfc23a3a6402b1f8f3a1a3cec}{main.\+on\+\_\+command\+\_\+error}} (ctx, error)
+\item 
+\mbox{\hyperlink{namespacemain_a82e92978f08c35e058d4bc158b166cee}{main.\+on\+\_\+error}} (event, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+\mbox{\hyperlink{namespacemain_a9e5ddb28a46fd0efea9b535ec8cc3738}{main.\+on\+\_\+ready}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a710fff751e39fdd49749150a67e60932}{main.\+once\+\_\+done}} (discord.\+sinks sink, discord.\+Text\+Channel channel, \texorpdfstring{$\ast$}{*}args)
+\item 
+\mbox{\hyperlink{namespacemain_a42c2687bf91aa208e656d8c69fdd4c18}{main.\+stop\+\_\+recording}} (ctx)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_a025c12c4c0c5e85e1f13223fbf66c204}{main.\+bot}} = discord.\+Bot(\mbox{\hyperlink{namespacemain_a5a5ba19301896a48b508b2951e3e9501}{intents}}=\mbox{\hyperlink{namespacemain_a5a5ba19301896a48b508b2951e3e9501}{intents}})
+\item 
+dict \mbox{\hyperlink{namespacemain_af2330fefbe6d7699b129b4df22c553ef}{main.\+connections}} = \{\}
+\item 
+\mbox{\hyperlink{namespacemain_a2c21b5c8c44ea05c9dc54b83fc06fbd2}{main.\+global\+\_\+stream\+\_\+buffer}} = \mbox{\hyperlink{classmain_1_1_stream_buffer}{Stream\+Buffer}}()
+\item 
+\mbox{\hyperlink{namespacemain_a5a5ba19301896a48b508b2951e3e9501}{main.\+intents}} = discord.\+Intents.\+all()
+\item 
+\mbox{\hyperlink{namespacemain_a24ee5a92d1c4e76a7a67da8452b941a1}{main.\+stream\+\_\+sink}} = \mbox{\hyperlink{classmain_1_1_stream_sink}{Stream\+Sink}}()
+\item 
+str \mbox{\hyperlink{namespacemain_ae2219465a4b178f27fff183d6c0b6abc}{main.\+TOKEN}} = "{}TODO Discord \mbox{\hyperlink{namespacemain_a025c12c4c0c5e85e1f13223fbf66c204}{bot}} token"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This project is a simple Discord bot which transcribes your Discord conversations in real time. 
+
+\begin{DoxyAuthor}{Author}
+Nathan Ulmer
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Friday 12-\/01-\/2024 \DoxyHorRuler{0}
+ 
+\end{DoxyDate}
+\hypertarget{main_8py_desc}{}\doxysubsection{\texorpdfstring{How It Works}{How It Works}}\label{main_8py_desc}
+{\ttfamily Using} py-\/cord, the bot can gain access to the voice channel you invite it to to listen to your conversation and then poll a speech-\/to-\/text API service to transcribe the conversation in real time. The transcription is separated by user and printed to the output channel in Discord.
+
+{\ttfamily When} you send the bot the shutdown command, it sends a request to Chat\+GPT to summarize the transcription of the conversation. This is then posted to the discord channel. 
